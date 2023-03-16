@@ -18,8 +18,9 @@ function Form({movieSearch}){
     }
  
     return(
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className="headApp">
+            <h1 className="title fw-bold py-4">MOVIE INFORMATION</h1>
+            <form onSubmit={handleSubmit} className="py-3">
                 <input type="text"
                        placeholder="Enter movie title here"
                        value={formData.searchTerm}
