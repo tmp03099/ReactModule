@@ -3,11 +3,15 @@ import Score from "./Score";
 function Student({students}){
 
     return (
-        <>  
-           <h1>{students.name}</h1> 
+        <div class="student">  
+           <h2>{students.name}</h2> 
            <p>{students.bio}</p> 
-           <Score />
-        </>
+            {students.scores.map((item)=>(
+             <Score studentScore={item}/>
+           ))}
+
+           
+        </div>
     )
 }
 export default Student;

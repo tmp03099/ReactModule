@@ -10,6 +10,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1>STUDENT INFORMATION</h1>
         {/* display student component for each student obj */}
         {students.map((item,idx) =>(
           <Student students={item} key={idx}/>

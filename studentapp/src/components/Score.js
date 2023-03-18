@@ -1,8 +1,9 @@
-function Score(){
+function Score({studentScore}){
     return (
-        <>
-            <h1>Score</h1>
-        </>
+        <div class="score">
+            <h4>Date: {studentScore.date}</h4>
+            <p>Score: {studentScore.score}</p>
+        </div>
     )
 }
 export default Score;
