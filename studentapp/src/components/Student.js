@@ -3,11 +3,11 @@ import Score from "./Score";
 function Student({students}){
 
     return (
-        <div class="student">  
+        <div className="student">  
            <h2>{students.name}</h2> 
            <p>{students.bio}</p> 
-            {students.scores.map((item)=>(
-             <Score studentScore={item}/>
+            {students.scores.map((item, idx)=>(
+             <Score studentScore={item} key={idx}/>
            ))}
 
            
