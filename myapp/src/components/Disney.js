@@ -9,9 +9,12 @@ function Disney({character}){
         <div>
             { showfilm && 
             <>
-                <h2>{character.films[0]}</h2>
+                <h2>{character.name}</h2>
                 <img src={character.imageUrl}/>
-                <p>Character Name: {character.name}</p>
+                <h3>Films</h3>
+                {character.films.map((ele,idx)=>(
+                    <div key={idx}>{ele}</div>
+                ))}
             </> 
             }
 

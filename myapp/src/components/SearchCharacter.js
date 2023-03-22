@@ -5,13 +5,13 @@ import { useState } from 'react';
 
 function SearchCharacter({searchChar,setChar}){
   //set input default
-  const [inputData, setInputData] = useState({char:"", movie:""});
+  const [inputData, setInputData] = useState({char:""});
 
   //handle change on the input
   const handleChange = (element) =>{
     console.log(element);
 
-    setInputData({...inputData, char: element.target.value});
+    setInputData({...inputData, [element.target.name]: element.target.value});
   }
 
   const handleSubmit = async (element) => {
@@ -26,6 +26,7 @@ function SearchCharacter({searchChar,setChar}){
       <InputGroup className="mb-3" >
         <Form.Control
           placeholder="Character Name"
+          name='char'
           value={inputData.char}
           onChange={handleChange}
         />
