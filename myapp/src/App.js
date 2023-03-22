@@ -11,9 +11,7 @@ function App() {
   useEffect(() => {
     const disneyData = async() => {
       const data = await getCharacters();
-      const newData = data.data
-      console.log(newData);
-      setCharacter(newData);
+      setCharacter(data);
     }
     disneyData();
       
@@ -22,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <h1>DISNEY CHARACTERS</h1>
-      <SearchCharacter />
+      <SearchCharacter searchChar={getCharacters} setChar={setCharacter}/>
       <div>
           {character.map((item, idx)=>(
             <Disney character={item} key={idx}/>

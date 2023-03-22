@@ -1,11 +1,12 @@
 import axios from 'axios';
 
-export const getCharacters = async () =>{
+export const getCharacters = async (char) =>{
+
     try{
-        const response = await fetch(`https://api.disneyapi.dev/characters?page=91`); //characters?pageSize=10 
+        console.log(char);
+        const response = await axios.get(`https://api.disneyapi.dev/characters?name${char}`); //characters?pageSize=10 
         console.log(response);
-        const data = response.json ();
-        console.log(data);
+        const data = response.data.data;
         return data;
         
     }catch(error){
