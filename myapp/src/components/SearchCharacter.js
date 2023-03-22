@@ -4,39 +4,41 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import { useState } from 'react';
 
 function SearchCharacter({searchChar,setChar}){
-
   //set input default
   const [inputData, setInputData] = useState({char:"", movie:""});
 
   //handle change on the input
   const handleChange = (element) =>{
-    setInputData({...inputData, [element.target.name] : element.target.value});
+    console.log(element);
+
+    setInputData({...inputData, char: element.target.value});
   }
 
-
-  const handleClick = async (element) => {
+  const handleSubmit = async (element) => {
     element.preventDefault();
     const data = await searchChar(inputData.char);
-    console.log("A");
+
     setChar(data);
   }
 
-    return (
-      <InputGroup className="mb-3" onSubmit={handleClick}>
+  return (
+    <Form onSubmit={handleSubmit}>
+      <InputGroup className="mb-3" >
         <Form.Control
           placeholder="Character Name"
+          value={inputData.char}
           onChange={handleChange}
         />
 
         <Button variant="outline-secondary" 
                 id="button-addon2"
                 type="submit"
-                
-                
         >
           Search
         </Button>
       </InputGroup>
-    )
+
+    </Form>
+  )
 }
 export default SearchCharacter;

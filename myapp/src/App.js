@@ -10,6 +10,7 @@ function App() {
 
   useEffect(() => {
     const disneyData = async() => {
+      console.log("disneyData")
       const data = await getCharacters();
       setCharacter(data);
     }
@@ -32,3 +33,4 @@ function App() {
 }
 
 export default App;
+
