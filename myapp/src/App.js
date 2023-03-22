@@ -2,6 +2,7 @@ import './App.css';
 import Disney from './components/Disney';
 import { useState, useEffect } from 'react';
 import { getCharacters } from './services/disney-api';
+import SearchCharacter from './components/SearchCharacter';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
   return (
     <div className="App">
       <h1>DISNEY CHARACTERS</h1>
+      <SearchCharacter />
       <div>
           {character.map((item, idx)=>(
             <Disney character={item} key={idx}/>

@@ -2,17 +2,21 @@ import { useState, useEffect} from 'react';
 
 function Disney({character}){
 
-    const [showFlim, setShowFlim] = useState(false);
-
-    useEffect(()=>{
-        
-    })
+    //sort the films length
+    const [showfilm, setShowfilm] = useState(character.films.length != 0);
 
     return (
         <div>
-            {showFlim && <h2>{character.films}</h2>}
-            <h2>{character.name}</h2>
-            <p>{character.tvShows}</p>
+            { showfilm && 
+            <>
+                <h2>{character.films[0]}</h2>
+                <img src={character.imageUrl}/>
+                <p>Character Name: {character.name}</p>
+            </> 
+            }
+
+         
+            
         </div>
     )
 }
