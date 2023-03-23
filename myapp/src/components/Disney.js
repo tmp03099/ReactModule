@@ -1,5 +1,6 @@
 import { useState} from 'react';
 import Accordion from 'react-bootstrap/Accordion';
+import { Link } from 'react-router-dom';
 
 function Disney({character}){
 
@@ -9,9 +10,11 @@ function Disney({character}){
     return (
         <div>
             { showfilm && 
-            <>
+            <div className='border border-2 rounded m-5 p-5 border-primary'>
                 <h2>{character.name}</h2>
-                <img src={character.imageUrl}/>
+                <Link to="./feedback">
+                     <img src={character.imageUrl}/>
+                </Link>
                 <div className="d-flex justify-content-center">
                     <Accordion defaultActiveKey="0" className="w-50">
                         <Accordion.Item eventKey="0">
@@ -35,7 +38,7 @@ function Disney({character}){
                 </div>
                 
                 
-            </> 
+            </div> 
             }
 
          

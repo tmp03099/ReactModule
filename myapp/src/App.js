@@ -1,8 +1,11 @@
 import './App.css';
-import Disney from './components/Disney';
 import { useState, useEffect } from 'react';
 import { getCharacters } from './services/disney-api';
 import SearchCharacter from './components/SearchCharacter';
+import { Routes, Route } from 'react-router-dom';
+import Feedback from './pages/Feedback';
+import Home from './pages/Home';
+import NavBar from './components/NavBar';
 
 function App() {
 
@@ -21,12 +24,21 @@ function App() {
   return (
     <div className="App">
       <h1>DISNEY CHARACTERS</h1>
+      <NavBar/>
       <SearchCharacter searchChar={getCharacters} setChar={setCharacter}/>
-      <div>
+      {/* <div>
           {character.map((item, idx)=>(
             <Disney character={item} key={idx}/>
           ))}
-      </div>
+      </div> */}
+
+      <Routes>
+
+        <Route path='/' element={<Home character={character}/>}/>
+
+        <Route path='/feedback' element={<Feedback/>}/>
+
+      </Routes>
         
     </div>
   );
