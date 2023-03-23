@@ -10,8 +10,6 @@ function Price () {
     const params = useParams();
     console.log(params);
 
-    // const apiKey = '41D65364-D5D8-4678-94BB-48075AF65DD9';
-    // const apiKey = "2FFA9750-D2ED-40B9-ACBD-D1C027E35041";
     const apiKey = process.env.REACT_APP_API_KEY;
     const symbol = params.symbol;
 
